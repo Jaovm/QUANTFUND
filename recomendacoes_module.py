@@ -43,8 +43,8 @@ def analyze_macro_scenario():
     if os.path.exists(inflation_file_br):
         try:
             df_inflation_br = pd.read_csv(inflation_file_br, index_col='Ano')
-            if not df_inflation_br.empty and \'Valor\' in df_inflation_br.columns:
-                last_inflation = df_inflation_br[\'Valor\'].iloc[-1]
+            if not df_inflation_br.empty and 'Valor' in df_inflation_br.columns:
+                last_inflation = df_inflation_br['Valor'].iloc[-1]
                 detail_br = f"Última inflação anual (Brasil, se dados disponíveis): {last_inflation:.2f}%"
                 if last_inflation > 7:
                     macro_outlook["BR"] = "Negativo (Inflação Alta)"
@@ -60,9 +60,9 @@ def analyze_macro_scenario():
     else:
         macro_outlook["detail_br"] = "Arquivo de dados de inflação do Brasil (macro_BRA_FP.CPI.TOTL.ZG.csv) não encontrado."
 
-    print(f"Cenário Macroeconômico Brasil: {macro_outlook[\'BR\']}")
-    print(f"Cenário Macroeconômico US: {macro_outlook[\'US\']}")
-    print(f"Detalhe: {macro_outlook.get(\'detail_br\', macro_outlook[\'detail\'])}")
+    print(f"Cenário Macroeconômico Brasil: {macro_outlook['BR']}")
+    print(f"Cenário Macroeconômico US: {macro_outlook['US']}")
+    print(f"Detalhe: {macro_outlook.get('detail_br', macro_outlook['detail'])}")
     
     return macro_outlook
 
@@ -72,8 +72,8 @@ def generate_recommendations(tickers_stems, macro_scenario):
     recommendations = []
 
     for stem in tickers_stems:
-        ticker_name_from_stem = stem.split(\'_\', 1)[1].replace(\'_\', ".") # Ex: br_PETR4_SA -> PETR4.SA
-        country_code = stem.split(\'_\')[0].upper() # BR ou US
+        ticker_name_from_stem = stem.split('_', 1)[1].replace('_', ".") # Ex: br_PETR4_SA -> PETR4.SA
+        country_code = stem.split('_')[0].upper() # BR ou US
         
         df_quant, insights = load_processed_data(stem)
         
