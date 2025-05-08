@@ -181,17 +181,17 @@ if __name__ == "__main__":
     import analise_quantitativa as aq
     df_petr4_hist = aq.load_stock_chart_data("br_PETR4_SA")
     if df_petr4_hist is not None:
-        df_petr4_hist[\'SMA_20\'] = aq.calculate_moving_average(df_petr4_hist, 20)
-        df_petr4_hist[\'SMA_50\'] = aq.calculate_moving_average(df_petr4_hist, 50)
-        df_petr4_hist[\'RSI\'] = aq.calculate_rsi(df_petr4_hist, 14)
+        df_petr4_hist['SMA_20'] = aq.calculate_moving_average(df_petr4_hist, 20)
+        df_petr4_hist['SMA_50'] = aq.calculate_moving_average(df_petr4_hist, 50)
+        df_petr4_hist['RSI'] = aq.calculate_rsi(df_petr4_hist, 14)
         df_petr4_hist.to_csv("br_PETR4_SA_quant_analysis.csv")
         print("Arquivo br_PETR4_SA_quant_analysis.csv gerado/atualizado.")
 
     df_aapl_hist = aq.load_stock_chart_data("us_AAPL")
     if df_aapl_hist is not None:
-        df_aapl_hist[\'SMA_20\'] = aq.calculate_moving_average(df_aapl_hist, 20)
-        df_aapl_hist[\'SMA_50\'] = aq.calculate_moving_average(df_aapl_hist, 50)
-        df_aapl_hist[\'RSI\'] = aq.calculate_rsi(df_aapl_hist, 14)
+        df_aapl_hist['SMA_20'] = aq.calculate_moving_average(df_aapl_hist, 20)
+        df_aapl_hist['SMA_50'] = aq.calculate_moving_average(df_aapl_hist, 50)
+        df_aapl_hist['RSI'] = aq.calculate_rsi(df_aapl_hist, 14)
         df_aapl_hist.to_csv("us_AAPL_quant_analysis.csv")
         print("Arquivo us_AAPL_quant_analysis.csv gerado/atualizado.")
 
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     
     if recs:
         output_filepath = os.path.join(DATA_DIR, "recomendacoes_geradas_yfinance.json")
-        with open(output_filepath, \'w\', encoding=\'utf-8\') as f:
+        with open(output_filepath, 'w', encoding='utf-8') as f:
             json.dump(recs, f, indent=4, ensure_ascii=False)
         print(f"\nRecomendações (yfinance) salvas em: {output_filepath}")
     else:
