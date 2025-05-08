@@ -91,8 +91,8 @@ def generate_recommendations(tickers_stems, macro_scenario):
         reasons = []
 
         # Análise Quantitativa (RSI)
-        if \'RSI\' in df_quant.columns and not df_quant[\'RSI\'].empty:
-            last_rsi = df_quant[\'RSI\'].iloc[-1]
+        if 'RSI' in df_quant.columns and not df_quant['RSI'].empty:
+            last_rsi = df_quant['RSI'].iloc[-1]
             reasons.append(f"RSI atual: {last_rsi:.2f}")
             if last_rsi < 30:
                 recommendation_score += 2 
@@ -108,7 +108,7 @@ def generate_recommendations(tickers_stems, macro_scenario):
         # Análise Fundamentalista (Rating de Analistas do yfinance)
         if insights and insights.get("recommendationKey"):
             rating_key = insights.get("recommendationKey").lower()
-            reasons.append(f"Recomendação de Analistas (yfinance): {rating_key.replace(\'_\', \' \').title()}")
+            reasons.append(f"Recomendação de Analistas (yfinance): {rating_key.replace('_', ' ').title()}")
             if rating_key in ["strong_buy", "buy"]:
                 recommendation_score += 2
             elif rating_key in ["sell", "strong_sell", "underperform"]:
