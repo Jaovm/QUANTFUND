@@ -1,0 +1,12 @@
+{
+    "AAPL": {
+        "Valuation_color": 0.5,
+        "Valuation_description": "Near Fair Value",
+        "Valuation_discount": "-1%",
+        "Valuation_provider": "Trading Central",
+        "Company_Dividend_Score": 0.0602,
+        "Recommendation_TargetPrice": 280.0,
+        "Recommendation_Provider": "Argus Research",
+        "Recommendation_Rating": "BUY"
+    }
+}

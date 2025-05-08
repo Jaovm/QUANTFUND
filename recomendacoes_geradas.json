@@ -1,0 +1,21 @@
+[
+    {
+        "ticker": "PETR4",
+        "recomendacao": "Manter/Neutro",
+        "score": 1,
+        "justificativas": [
+            "RSI(14) atual: 43.36",
+            "Cen\u00e1rio Macro (BR): Neutro"
+        ]
+    },
+    {
+        "ticker": "AAPL",
+        "recomendacao": "Comprar",
+        "score": 3,
+        "justificativas": [
+            "RSI(14) atual: 52.26",
+            "Rating de Analistas: BUY",
+            "Cen\u00e1rio Macro (US): Neutro"
+        ]
+    }
+]
