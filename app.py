@@ -94,7 +94,7 @@ elif app_mode == "Análise de Ativos":
             st.session_state.last_region_input = region_clean
 
             if region_clean == "BR" and not ticker_clean.endswith(".SA"):
-                st.warning(f"Para ativos da B3 (região BR), o ticker deve terminar com ".SA". Exemplo: {ticker_clean}.SA")
+                st.warning("Para ativos da B3 (região BR), o ticker deve terminar com ".SA". Exemplo: {ticker_clean}.SA")
             else:
                 stem_key = f"{region_clean.lower()}_{ticker_clean.replace(".", "_")}"
                 coleta_dados_filename_prefix = region_clean.lower()
