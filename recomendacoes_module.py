@@ -21,7 +21,7 @@ def load_processed_data(ticker_stem):
             
     if os.path.exists(insights_file):
         try:
-            with open(insights_file, \'r\') as f:
+            with open(insights_file, 'r') as f:
                 insights_data = json.load(f) # Carrega o JSON gerado por yfinance
         except Exception as e:
             print(f"Erro ao carregar insights de {insights_file}: {e}")
