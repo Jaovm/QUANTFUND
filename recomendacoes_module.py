@@ -15,7 +15,7 @@ def load_processed_data(ticker_stem):
 
     if os.path.exists(quant_file):
         try:
-            df_quant = pd.read_csv(quant_file, index_col=\'Timestamp\', parse_dates=True)
+            df_quant = pd.read_csv(quant_file, index_col=\'Timestamp', parse_dates=True)
         except Exception as e:
             print(f"Erro ao carregar dados quantitativos de {quant_file}: {e}")
             
