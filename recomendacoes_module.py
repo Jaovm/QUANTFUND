@@ -42,7 +42,7 @@ def analyze_macro_scenario():
     inflation_file_br = os.path.join(DATA_DIR, "macro_BRA_FP.CPI.TOTL.ZG.csv") # Nome de arquivo exemplo
     if os.path.exists(inflation_file_br):
         try:
-            df_inflation_br = pd.read_csv(inflation_file_br, index_col=\'Ano\')
+            df_inflation_br = pd.read_csv(inflation_file_br, index_col='Ano')
             if not df_inflation_br.empty and \'Valor\' in df_inflation_br.columns:
                 last_inflation = df_inflation_br[\'Valor\'].iloc[-1]
                 detail_br = f"Última inflação anual (Brasil, se dados disponíveis): {last_inflation:.2f}%"
